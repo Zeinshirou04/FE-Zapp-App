@@ -1,9 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBuilding, faCity, faMugHot, faShop, faUser } from "@fortawesome/free-solid-svg-icons"
+
 const clients = [
-  { icon: '🏪', label: 'Micro Businesses' },
-  { icon: '👤', label: 'Personal Clients' },
-  { icon: '🏫', label: 'Schools & Organizations' },
-  { icon: '☕', label: 'Cafés & Restaurants' },
-  { icon: '🏗️', label: 'Local Companies' },
+  { icon: <FontAwesomeIcon icon={faShop} className="text-white h-5" />, label: 'Micro Businesses' },
+  { icon: <FontAwesomeIcon icon={faUser} className="text-white h-5" />, label: 'Personal Clients' },
+  { icon: <FontAwesomeIcon icon={faBuilding} className="text-white h-5" />, label: 'Schools & Organizations' },
+  { icon: <FontAwesomeIcon icon={faMugHot} className="text-white h-5" />, label: 'Cafés & Restaurants' },
+  { icon: <FontAwesomeIcon icon={faCity} className="text-white h-5" />, label: 'Local Companies' },
 ]
 
 const values = [
@@ -46,7 +49,7 @@ export default function Clients() {
                 key={client.label}
                 className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 hover:bg-white/10 transition-colors"
               >
-                <span className="text-xl">{client.icon}</span>
+                {client.icon}
                 <span className="font-sans text-white/80 text-sm font-medium">
                   {client.label}
                 </span>
@@ -71,7 +74,7 @@ export default function Clients() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, i) => (
               <div key={value.title} className="p-6 bg-white rounded-2xl border border-zapp-ink/8">
-                <div className="font-display font-bold text-4xl text-volt-mist mb-4">
+                <div className="font-display font-bold text-4xl text-zapp-ink mb-4">
                   0{i + 1}
                 </div>
                 <h3 className="font-display font-semibold text-lg text-zapp-ink mb-2">
