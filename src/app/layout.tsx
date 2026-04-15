@@ -1,17 +1,17 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
+import "./globals.css";
+import type { Metadata } from "next";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: 'Zapp Freelance',
-  description: 'SaaS & API Development for Indonesian Businesses',
-}
+  title: "Zapp Freelance",
+  description: "SaaS & API Development for Indonesian Businesses",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -21,5 +21,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }
