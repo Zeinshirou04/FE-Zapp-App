@@ -1,43 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* ─── Fonts ─── */
-  --font-display: 'Syne', sans-serif;
-  --font-sans:    'DM Sans', sans-serif;
+  /* ── Fonts ─────────────────────────────────────────── */
+  --font-display: var(--font-montserrat), sans-serif;
+  --font-sans:    var(--font-lato), sans-serif;
 
-  /* ─── Brand Colors ─── */
-
-  /* Primary — Volt Purple */
-  --color-volt:         #4F46C8;
-  --color-volt-light:   #7B74E8;
-  --color-volt-mist:    #EEEDFE;
-
-  /* Dark */
-  --color-zapp-ink:     #1A1833;
-
-  /* Secondary */
-  --color-zapp-teal:    #0F6E56;
-  --color-zapp-coral:   #D85A30;
-
-  /* Neutral */
-  --color-zapp-gray:    #6B6B65;
-  --color-zapp-bg:      #F7F6F2;
-
-  /* ─── Font Sizes ─── */
-  --text-display-xl: 3rem;
-  --text-display-lg: 2.25rem;
-  --text-display-md: 1.5rem;
-}
-
-@layer base {
-  html {
-    background-color: var(--color-zapp-bg);
-    color: var(--color-zapp-ink);
-    font-family: var(--font-sans);
-  }
-
-  h1, h2, h3, h4 {
-    font-family: var(--font-display);
-  }
+  /* ── Brand colours ──────────────────────────────────── */
+  --color-zapp-ink:    #1C1B20;
+  --color-volt:        #6246EA;
+  --color-volt-light:  #9B85FF;
+  --color-volt-dim:    #3D2BAA;
 }

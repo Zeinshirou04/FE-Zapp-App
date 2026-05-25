@@ -1,60 +1,70 @@
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+'use client'
+
+import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
+const fadeUp = {
+  hidden:  { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+}
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-zapp-ink py-24 px-16">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="bg-zapp-ink py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl">
-          <span className="font-sans text-sm font-medium text-volt-light uppercase tracking-widest">
-            Get in touch
-          </span>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white mt-3 mb-6 leading-tight">
-            Let's build something
-            <br />
-            <span className="text-volt-light">together.</span>
-          </h2>
-          <p className="font-sans text-white/60 leading-relaxed mb-10">
-            Have a project in mind? Tell us what you need and we'll get back to
-            you as soon as possible with a quote and timeline.
-          </p>
 
-          {/* Contact options */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="mailto:Farras.FF6@gmail.com"
-              className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors rounded-xl px-6 py-4"
-            >
-              <FontAwesomeIcon icon={faEnvelope} className="text-white h-7" />
-              <div>
-                <div className="font-sans text-xs text-white/40 mb-0.5">
-                  Email us
-                </div>
-                <div className="font-sans text-sm font-medium text-white">
-                  Farras.FF6@gmail.com
-                </div>
-              </div>
-            </a>
-            <a
-              href="https://wa.me/6285183266907"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors rounded-xl px-6 py-4"
-            >
-              <FontAwesomeIcon icon={faWhatsapp} className="text-white h-7" />
-              <div>
-                <div className="font-sans text-xs text-white/40 mb-0.5">
-                  WhatsApp
-                </div>
-                <div className="font-sans text-sm font-medium text-white">
-                  Chat with us
-                </div>
-              </div>
-            </a>
-          </div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+          >
+            <span className="text-xs font-sans font-semibold tracking-widest uppercase text-volt-light">
+              Get in touch
+            </span>
+
+            <h2 className="font-display font-bold text-3xl md:text-4xl
+                           text-white leading-tight tracking-tight mt-4 mb-4">
+              Let's build something{' '}
+              <span className="text-volt-light">together.</span>
+            </h2>
+
+            <p className="font-sans text-white/60 leading-relaxed mb-10">
+              Have a project in mind? Tell us what you need and we'll get
+              back to you with a quote and timeline.
+            </p>
+
+            {/* Plain contact links — no card boxes */}
+            <div className="flex flex-col sm:flex-row gap-6">
+              <a
+                href="mailto:Farras.FF6@gmail.com"
+                className="inline-flex items-center gap-3
+                           font-sans text-sm text-white/70 hover:text-white
+                           transition-colors duration-150"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4 text-volt-light" />
+                Farras.FF6@gmail.com
+              </a>
+
+              <a
+                href="https://wa.me/6285183266907"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3
+                           font-sans text-sm text-white/70 hover:text-white
+                           transition-colors duration-150"
+              >
+                <FontAwesomeIcon icon={faWhatsapp} className="h-4 w-4 text-volt-light" />
+                Chat on WhatsApp
+              </a>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
-  );
+  )
 }
