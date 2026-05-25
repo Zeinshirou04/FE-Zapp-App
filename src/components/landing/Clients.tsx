@@ -1,93 +1,61 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBuilding, faCity, faMugHot, faShop, faUser } from "@fortawesome/free-solid-svg-icons"
+'use client'
 
-const clients = [
-  { icon: <FontAwesomeIcon icon={faShop} className="text-white h-5" />, label: 'Micro Businesses' },
-  { icon: <FontAwesomeIcon icon={faUser} className="text-white h-5" />, label: 'Personal Clients' },
-  { icon: <FontAwesomeIcon icon={faBuilding} className="text-white h-5" />, label: 'Schools & Organizations' },
-  { icon: <FontAwesomeIcon icon={faMugHot} className="text-white h-5" />, label: 'Cafés & Restaurants' },
-  { icon: <FontAwesomeIcon icon={faCity} className="text-white h-5" />, label: 'Local Companies' },
-]
+import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faBuilding,
+  faSchool,
+  faMugHot,
+  faHardHat,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons'
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
-const values = [
-  {
-    title: 'Code availability',
-    description: 'Package-based delivery — you own the code.',
-  },
-  {
-    title: 'Clean code & docs',
-    description: 'Readable, maintainable, and well-documented output.',
-  },
-  {
-    title: 'Fast delivery',
-    description: 'Quick turnaround with open communication throughout.',
-  },
-  {
-    title: 'Affordable prices',
-    description: 'Priced for Indonesian micro businesses, not enterprises.',
-  },
+interface ClientType {
+  icon: IconDefinition
+  label: string
+}
+
+const CLIENT_TYPES: ClientType[] = [
+  { icon: faBuilding,  label: 'Local companies'    },
+  { icon: faSchool,    label: 'Schools & organisations' },
+  { icon: faMugHot,    label: 'Cafes & restaurants' },
+  { icon: faHardHat,   label: 'Construction firms'  },
+  { icon: faUser,      label: 'Personal clients'    },
 ]
 
 export default function Clients() {
   return (
-    <>
-      {/* Target clients */}
-      <section id="clients" className="bg-zapp-ink py-24 px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <span className="font-sans text-sm font-medium text-volt-light uppercase tracking-widest">
-              Who we serve
-            </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-white mt-3 leading-tight">
-              Built for Indonesian businesses
-            </h2>
-          </div>
+    <section className="bg-gray-50 dark:bg-zinc-900 py-16 md:py-20">
+      <div className="max-w-6xl mx-auto px-6">
 
-          <div className="flex flex-wrap gap-4">
-            {clients.map((client) => (
-              <div
-                key={client.label}
-                className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 hover:bg-white/10 transition-colors"
-              >
-                {client.icon}
-                <span className="font-sans text-white/80 text-sm font-medium">
-                  {client.label}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          <p className="font-sans text-xs font-semibold tracking-widest uppercase
+                        text-gray-400 dark:text-zinc-500 mb-8">
+            Who we work with
+          </p>
+
+          <div className="flex flex-wrap gap-x-10 gap-y-5">
+            {CLIENT_TYPES.map(({ icon, label }) => (
+              <div key={label} className="flex items-center gap-2.5">
+                <FontAwesomeIcon
+                  icon={icon}
+                  className="h-4 w-4 text-gray-400 dark:text-zinc-500"
+                />
+                <span className="font-sans text-sm text-gray-600 dark:text-gray-400">
+                  {label}
                 </span>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
 
-      {/* Values */}
-      <section id="values" className="bg-zapp-bg py-24 px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <span className="font-sans text-sm font-medium text-volt uppercase tracking-widest">
-              Why Zapp
-            </span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-zapp-ink mt-3 leading-tight">
-              Our values
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, i) => (
-              <div key={value.title} className="p-6 bg-white rounded-2xl border border-zapp-ink/8">
-                <div className="font-display font-bold text-4xl text-zapp-ink mb-4">
-                  0{i + 1}
-                </div>
-                <h3 className="font-display font-semibold text-lg text-zapp-ink mb-2">
-                  {value.title}
-                </h3>
-                <p className="font-sans text-sm text-zapp-gray leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

@@ -1,21 +1,25 @@
-import Hero from '@/components/landing/Hero'
-import Services from '@/components/landing/Services'
-import Clients from '@/components/landing/Clients'
-import Contact from '@/components/landing/Contact'
+import Navbar from '../components/layout/Navbar'
+import Hero from '../components/landing/Hero'
+import Services from '../components/landing/Services'
+import Portfolio from '../components/landing/Portfolio'
+import Clients from '../components/landing/Clients'
+import Values from '../components/landing/Values'
+import Contact from '../components/landing/Contact'
+import Footer from '../components/layout/Footer'
 
-export const metadata = {
-  title: 'Zapp Freelance — SaaS & API Development for Indonesian Businesses',
-  description:
-    'We build affordable SaaS applications, REST APIs, and admin dashboards for micro companies across Indonesia. Fast delivery, clean code, affordable prices.',
-}
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Services />
-      <Clients />
-      <Contact />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Portfolio />
+        <Clients />
+        <Values />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   )
 }
