@@ -25,9 +25,13 @@ export const metadata: Metadata = {
   description:
     "We build SaaS applications, REST APIs, and admin dashboards for micro businesses across Indonesia. Affordable, clean code, fast delivery.",
   metadataBase: new URL("https://zapp.web.id"),
+  keywords: ['Farras Adhani Zayn', 'Full Stack Developer', 'Laravel Developer', 'Indonesia', 'Zapp'],
+  authors: [{ name: 'Farras Adhani Zayn', url: 'https://portfolio.zapp.web.id' }],
+  creator: 'Farras Adhani Zayn',
   openGraph: {
     title: "Zapp Freelance — Elegant software for your growing business.",
-    description: "We build SaaS applications, REST APIs, and admin dashboards for micro businesses across Indonesia. Affordable, clean code, fast delivery.",
+    description:
+      "We build SaaS applications, REST APIs, and admin dashboards for micro businesses across Indonesia. Affordable, clean code, fast delivery.",
     url: "https://zapp.web.id",
     siteName: "Zapp Freelance",
     locale: "en_US",
@@ -36,24 +40,43 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Zapp Freelance — Elegant software for your growing business",
-    description: "We build SaaS applications, REST APIs, and admin dashboards for micro businesses across Indonesia. Affordable, clean code, fast delivery.",
+    description:
+      "We build SaaS applications, REST APIs, and admin dashboards for micro businesses across Indonesia. Affordable, clean code, fast delivery.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Farras Adhani Zayn',
+  url: 'https://portfolio.zapp.web.id',
+  jobTitle: 'Full Stack Developer',
+  description: 'Full Stack Developer from Indonesia specializing in Laravel, REST APIs, and web applications for businesses.',
+  image: 'https://portfolio.zapp.web.id/og-image.jpg',
+  sameAs: [
+    'https://www.linkedin.com/in/farras-zayn/',
+    'https://github.com/Zeinshirou04',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'ID',
+  },
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${montserrat.variable} ${lato.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="bg-white dark:bg-zinc-950 text-gray-900 dark:text-gray-100 antialiased">
-        {children}
-      </body>
+    <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+      </head>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
