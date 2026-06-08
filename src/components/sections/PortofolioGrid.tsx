@@ -122,7 +122,7 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               {/* Actions */}
               <div className="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-zinc-700">
                 <a
-                  href={`https://portfolio.zapp.web.id/projects/${project.slug}`}
+                  href={`https://portofolio.zapp.web.id/projects/${project.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5
