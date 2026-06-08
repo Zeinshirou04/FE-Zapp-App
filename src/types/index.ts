@@ -43,7 +43,7 @@ export interface Project {
     type: string
     brief: string
     stack: string[]
-    cover_image: string | null
+    cover_image_url: string | null
     earning: number
     is_maintained: boolean
     started_at: string | null

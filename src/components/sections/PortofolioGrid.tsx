@@ -65,9 +65,9 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
           >
             {/* Cover image */}
             <div className="h-40 bg-gray-100 dark:bg-zinc-700 relative overflow-hidden">
-              {project.cover_image ? (
+              {project.cover_image_url ? (
                 <Image
-                  src={project.cover_image}
+                  src={project.cover_image_url}
                   alt={project.title}
                   fill
                   className="object-cover"
