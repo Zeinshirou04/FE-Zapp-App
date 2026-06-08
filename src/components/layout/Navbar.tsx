@@ -6,7 +6,7 @@ import { faBars, faXmark, faArrowRight } from '@fortawesome/free-solid-svg-icons
 
 const NAV_LINKS = [
   { label: 'Services',  href: '#services'  },
-  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Portfolio', href: 'https://portofolio.zapp.web.id' },
   { label: 'About',     href: '#about'     },
   { label: 'Contact',   href: '#contact'   },
 ]
