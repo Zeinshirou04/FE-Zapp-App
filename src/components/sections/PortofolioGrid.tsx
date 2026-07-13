@@ -103,13 +103,13 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
               <div className="flex flex-wrap gap-2 mb-5">
                 {project.stack?.slice(0, 4).map((tag) => (
                   <span
-                    key={tag}
+                    key={tag.name}
                     className="font-sans text-xs font-medium
-                               bg-gray-100 dark:bg-zinc-700
-                               text-gray-600 dark:text-gray-300
-                               px-2.5 py-1 rounded-md"
+               bg-gray-100 dark:bg-zinc-700
+               text-gray-600 dark:text-gray-300
+               px-2.5 py-1 rounded-md"
                   >
-                    {tag}
+                    {tag.name}
                   </span>
                 ))}
                 {project.stack?.length > 4 && (
