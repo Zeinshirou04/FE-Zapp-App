@@ -19,6 +19,11 @@ async function apiFetch<T>(path: string): Promise<T> {
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
+export interface StackItem {
+  name: string
+  version: string
+}
+
 export interface ProjectImage {
   id: number
   path: string
@@ -45,7 +50,7 @@ export interface Project {
   slug: string
   type: string
   brief: string
-  stack: string[]
+  stack: StackItem[]
   cover_image_url: string | null
   earning: string
   is_maintained: boolean
