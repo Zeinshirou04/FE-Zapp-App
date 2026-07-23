@@ -52,9 +52,9 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
         viewport={{ once: true, margin: "-60px" }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <motion.article
-            key={project.id}
+            key={`${project.id}-${index}`}
             variants={item}
             className="bg-white dark:bg-zinc-800
                        border border-gray-100 dark:border-zinc-700
@@ -101,9 +101,9 @@ export default function PortfolioGrid({ projects }: { projects: Project[] }) {
 
               {/* Stack tags */}
               <div className="flex flex-wrap gap-2 mb-5">
-                {project.stack?.slice(0, 4).map((tag) => (
+                {project.stack?.slice(0, 4).map((tag, index) => (
                   <span
-                    key={tag.name}
+                    key={`${tag.name}-${index}`}
                     className="font-sans text-xs font-medium
                bg-gray-100 dark:bg-zinc-700
                text-gray-600 dark:text-gray-300
