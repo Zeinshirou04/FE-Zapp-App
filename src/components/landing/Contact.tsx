@@ -40,13 +40,13 @@ export default function Contact() {
             {/* Plain contact links — no card boxes */}
             <div className="flex flex-col sm:flex-row gap-6">
               <a
-                href="mailto:Farras.FF6@gmail.com"
+                href="mailto:business.zappdev@gmail.com"
                 className="inline-flex items-center gap-3
                            font-sans text-sm text-white/70 hover:text-white
                            transition-colors duration-150"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4 text-volt-light" />
-                Farras.FF6@gmail.com
+                business.zappdev@gmail.com
               </a>
 
               <a
