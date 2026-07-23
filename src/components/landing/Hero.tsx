@@ -15,7 +15,7 @@ const fadeUp: Variants = {
 
 export default function Hero() {
   return (
-    <section className="bg-zapp-ink min-h-screen flex items-center pt-16">
+    <section className="bg-gray-50 dark:bg-zapp-ink min-h-screen flex items-center pt-16">
       <div className="max-w-6xl mx-auto px-6 py-32 md:py-40">
         <div className="max-w-3xl">
 
@@ -27,7 +27,7 @@ export default function Hero() {
             custom={0}
             className="font-display font-bold
                        text-5xl md:text-6xl lg:text-7xl
-                       text-white leading-[1.05] tracking-tight mb-6"
+                       text-zapp-ink dark:text-white leading-[1.05] tracking-tight mb-6"
           >
             Elegant software
             <br />
@@ -43,7 +43,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.1}
-            className="font-sans text-lg text-white/60 leading-relaxed mb-10 max-w-xl"
+            className="font-sans text-lg text-shadow-zapp-ink dark:text-white/60 leading-relaxed mb-10 max-w-xl"
           >
             Affordable SaaS applications, REST APIs, and admin dashboards
             for micro businesses across Indonesia — fast, clean, and
@@ -75,7 +75,7 @@ export default function Hero() {
                          font-sans font-semibold text-base
                          px-7 py-3.5 rounded-lg
                          border border-white/20 hover:border-white/40
-                         text-white/80 hover:text-white
+                         text-shadow-zapp-ink/80 dark:text-white/80 hover:text-shadow-zapp-ink
                          transition-colors duration-150"
             >
               See our services
@@ -89,7 +89,7 @@ export default function Hero() {
             animate="visible"
             custom={0.3}
             className="mt-14 pt-14 border-t border-white/10
-                       font-sans text-sm text-white/30 tracking-wide"
+                       font-sans text-sm text-volt-dim dark:text-white/30 tracking-wide"
           >
             Built with Laravel · Next.js · Tailwind CSS · MySQL
           </motion.p>
